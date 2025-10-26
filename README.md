@@ -28,5 +28,4 @@ When running the app, you’ll see how the LLM responds differently depending on
 ---
 
 **Learn more:**  
-🧩 [@jigjoy-io/mosaic on npm](https://www.npmjs.com/package/@jigjoy-io/mosaic)  
-💡 [JigJoy Platform](https://www.jigjoy.io)
+[@jigjoy-io/mosaic on npm](https://www.npmjs.com/package/@jigjoy-io/mosaic)  
