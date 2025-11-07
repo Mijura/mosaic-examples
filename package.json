@@ -8,7 +8,7 @@
     "dev": "tsx ./index.ts"
   },
   "dependencies": {
-    "@jigjoy-io/mosaic": "^1.0.0",
+    "@jigjoy-io/mosaic": "^0.0.1",
     "dotenv": "^17.2.3"
   },
   "devDependencies": {

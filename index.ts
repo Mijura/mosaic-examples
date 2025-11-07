@@ -1,12 +1,18 @@
+import { ChatRequest, Endpoint } from '@jigjoy-io/mosaic/core'
+import { ChatCompletion } from '@jigjoy-io/mosaic/providers/openai'
+
 import 'dotenv/config'
-import { meteorologist, meteorologistWithTool } from "./dependencies"
 
-const message = "I'm planning a weekend trip. What's the weather in Belgrade?"
+const chat: ChatRequest = {
+    messages: [{
+        role: 'system', 
+        content: 'You are the weather assistent'
+    }],
+    prompt: 'What is the weather in Serbia',
+    model: 'gpt-5-nano'
+}
 
-const output = await meteorologist.response(message)
-console.log("Answer →", output.text)
-console.log("--------------------")
+const chatCompletion: Endpoint = new ChatCompletion()
 
-const exec = await meteorologistWithTool.response(message)
-console.log("ToolCalls →", exec.toolCalls)
-console.log("Answer →", exec.text)
+const response = await chatCompletion.accept(chat)
+console.log(response)
