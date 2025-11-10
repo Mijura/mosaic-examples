@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "dev": "tsx ./anthropic/simple-prompt.ts",
+    "dev": "tsx ./anthropic/complex-reasoning.ts",
     "watch": "tsc --watch",
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@jigjoy-io/mosaic": "^0.0.9",
+    "@jigjoy-io/mosaic": "^0.1.0",
     "dotenv": "^17.2.3"
   },
   "devDependencies": {

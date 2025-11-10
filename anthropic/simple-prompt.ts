@@ -6,23 +6,26 @@
  */
 
 import 'dotenv/config'
-import { gateway, InvocationRequest } from '@jigjoy-io/mosaic'
+import { MosaicAgent, Mosaic } from '@jigjoy-io/mosaic'
 
 // Simple prompt with Claude Sonnet 4.5
 async function simpleExample() {
     console.log('\n=== Simple Claude Sonnet 4.5 Example ===\n')
-    
-    const request: InvocationRequest = {
+
+    const request: Mosaic = {
         messages: [{
             role: 'system',
             content: 'You are a helpful AI assistant specialized in explaining complex topics simply'
         }],
-        prompt: 'Explain quantum entanglement in 2-3 sentences for a beginner',
         model: 'claude-sonnet-4-5-20250929'
     }
-    
-    const response = await gateway.invoke(request)
+
+    const agent = new MosaicAgent(request)
+    const prompt =  'Explain quantum entanglement in 2-3 sentences for a beginner'
+
+    let response = await agent.act(prompt)
     console.log(response)
+
 }
 
 // Run examples

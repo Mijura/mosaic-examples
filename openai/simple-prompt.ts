@@ -1,7 +1,7 @@
 import 'dotenv/config'
-import { gateway, InvocationRequest } from '@jigjoy-io/mosaic'
+import { Mosaic, MosaicAgent } from '@jigjoy-io/mosaic'
 
-const request: InvocationRequest = {
+const mosaic: Mosaic = {
     messages: [{
         role: 'system', 
         content: 'You are the weather assistent'
@@ -10,5 +10,6 @@ const request: InvocationRequest = {
     model: 'gpt-5'
 }
 
-const response = await gateway.invoke(request)
+const agent = new MosaicAgent(mosaic)
+const response = await agent.act()
 console.log(response)
