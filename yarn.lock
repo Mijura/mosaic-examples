@@ -26,10 +26,10 @@
     wrap-ansi "^8.1.0"
     wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
 
-"@jigjoy-io/mosaic@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/@jigjoy-io/mosaic/-/mosaic-0.0.8.tgz"
-  integrity sha512-od4Xx6e2r0BrKgDcci2XinJeboBXo03G0WgYoxMplJiR2xr+mzZlMO1M69orevvGH+SkVjGJIAh/T/2JIyYKKQ==
+"@jigjoy-io/mosaic@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.npmjs.org/@jigjoy-io/mosaic/-/mosaic-0.0.9.tgz"
+  integrity sha512-AGH3dBuLXB4hTGGuT8/LOWdb6m5U0YKBZmLEb5edDo0QOaPG5d2ytxHsnFJdcp1jjFghz+QDTU0DDfLBwhDhIg==
   dependencies:
     "@anthropic-ai/sdk" "^0.68.0"
     openai "^6.6.0"
@@ -319,8 +319,3 @@ wrap-ansi@^8.1.0:
     ansi-styles "^6.1.0"
     string-width "^5.0.1"
     strip-ansi "^7.0.1"
-
-"zod@^3.25 || ^4.0", "zod@^3.25.0 || ^4.0.0":
-  version "3.25.76"
-  resolved "https://registry.npmjs.org/zod/-/zod-3.25.76.tgz"
-  integrity sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==
