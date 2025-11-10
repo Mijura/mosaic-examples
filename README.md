@@ -1,31 +1,43 @@
-# Mosaic Tool Usage Example
+## Mosaic Examples
 
-This example project uses [`@jigjoy-io/mosaic`](https://www.npmjs.com/package/@jigjoy-io/mosaic) to demonstrate how to run an LLM-powered agent — both standalone and with an attached **tool** (a function the agent can call to interact with the outside world).
+Minimal TypeScript examples using the Mosaic AI gateway with OpenAI and Anthropic.
 
-## Getting Started
+### Prerequisites
+- Node.js 18+
 
-### 1. Install dependencies
+### Install
 
 ```bash
 npm install
 ```
 
-### 2. Run the app
+### Environment
+Create a `.env` in the project root and add any provider API keys you plan to use (e.g., `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`). The examples load env vars via `dotenv`.
+
+### Run
+- Quick start (runs the Anthropic simple prompt example):
 
 ```bash
 npm run dev
 ```
 
-## About
+- Build and run the compiled `index.ts`:
 
-Mosaic provides a simple framework for composing AI agents that can reason, plan, and execute actions.  
-In this example, you’ll learn how to configure an agent, attach a tool, and observe how the LLM decides when to invoke it during a conversation.
+```bash
+npm run build
+node dist/index.js
+```
 
-## Example Output
+- Run any example directly (without building) using `tsx`:
 
-When running the app, you’ll see how the LLM responds differently depending on whether it has access to a tool — dynamically deciding when to call it and how to use its results.
+```bash
+npx tsx anthropic/simple-prompt.ts
+npx tsx anthropic/vision.ts
+npx tsx anthropic/multi-turn-conversation.ts
+npx tsx anthropic/complex-reasoning.ts
+npx tsx openai/simple-prompt.ts
+```
 
----
-
-**Learn more:**  
-[@jigjoy-io/mosaic on npm](https://www.npmjs.com/package/@jigjoy-io/mosaic)  
+### Project Structure
+- `anthropic/` — Anthropic-specific examples
+- `openai/` — OpenAI-specific examples
