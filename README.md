@@ -1,6 +1,6 @@
 ## Mosaic Examples
 
-Minimal TypeScript examples using the Mosaic AI gateway with OpenAI and Anthropic.
+This example project showcases how to use @jigjoy-io/mosaic to send unified requests when interacting with both OpenAI and Anthropic models.
 
 ### Prerequisites
 - Node.js 18+
