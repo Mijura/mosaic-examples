@@ -6,7 +6,7 @@ const mosaic: Mosaic = {
         role: 'system', 
         content: 'You are the weather assistent'
     }],
-    prompt: 'What is the weather in Serbia',
+    task: 'What is the weather in Serbia',
     model: 'gpt-5'
 }
 

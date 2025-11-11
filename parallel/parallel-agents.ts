@@ -35,14 +35,14 @@ async function parallelAgentsExample() {
     const openaiAgent = new MosaicAgent(openaiRequest)
     const anthropicAgent = new MosaicAgent(anthropicRequest)
 
-    const prompt = 'What are the key differences between TypeScript and JavaScript? Provide a concise answer.'
+    const task = 'What are the key differences between TypeScript and JavaScript? Provide a concise answer.'
 
     // Execute both agents in parallel using Promise.all()
     const startTime = Date.now()
     
     const [openaiResponse, anthropicResponse] = await Promise.all([
-        openaiAgent.act(prompt),
-        anthropicAgent.act(prompt)
+        openaiAgent.act(task),
+        anthropicAgent.act(task)
     ])
 
     const endTime = Date.now()
