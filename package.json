@@ -10,7 +10,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@jigjoy-io/mosaic": "^0.1.1",
+    "@jigjoy-io/mosaic": "^0.1.2",
     "dotenv": "^17.2.3"
   },
   "devDependencies": {
