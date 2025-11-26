@@ -1,0 +1,35 @@
+import 'dotenv/config'
+import { z } from 'zod'
+import { MosaicAgent, Mosaic } from '@jigjoy-io/mosaic'
+
+const bugReportSchema = z.object({
+    title: z.string(),
+    severity: z.enum(['low', 'medium', 'high']),
+    summary: z.string(),
+    reproductionSteps: z.array(z.string()).min(2),
+    suggestedFix: z.string()
+})
+
+async function structuredOutputExample() {
+    const request: Mosaic = {
+        model: 'claude-sonnet-4-5-20250929',
+        messages: [
+            {
+                role: 'system',
+                content: 'You are a senior QA engineer who writes concise bug reports.'
+            }
+        ],
+        task: 'Turn the following testing notes into a bug report: App freezes after clicking export twice quickly.',
+        structuredOutput: bugReportSchema
+    }
+
+    const agent = new MosaicAgent(request)
+    const response = await agent.act()
+    const result = bugReportSchema.parse(response)
+    console.log(result)
+}
+
+structuredOutputExample().catch((error) => {
+    console.error('Anthropic structured output example failed:', error)
+})
+
