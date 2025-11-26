@@ -1,6 +1,6 @@
 import 'dotenv/config'
 import z from 'zod'
-import { MosaicAgent, Mosaic } from '@jigjoy-io/mosaic'
+import { Agent, Command } from '@jigjoy-io/mosaic'
 
 const mealPlanSchema = z.object({
     calories: z.number(),
@@ -15,13 +15,13 @@ const mealPlanSchema = z.object({
 })
 
 async function structuredOutputExample() {
-    const request: Mosaic = {
+    const request: Command = {
         model: 'gpt-5-mini',
         task: 'Create a 1-day vegetarian meal plan with breakfast, lunch, and dinner.',
         structuredOutput: mealPlanSchema
     }
 
-    const agent = new MosaicAgent(request)
+    const agent = new Agent(request)
     const response = await agent.act()
     const result = mealPlanSchema.parse(response)
     console.log(result)

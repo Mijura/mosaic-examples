@@ -6,13 +6,13 @@
  */
 
 import 'dotenv/config'
-import { Mosaic, MosaicAgent } from '@jigjoy-io/mosaic'
+import { Command, Agent } from '@jigjoy-io/mosaic'
 
 // Using Claude Opus 4.1 for complex reasoning
 async function complexReasoningExample() {
     console.log('\n=== Complex Reasoning with Claude Opus 4.1 ===\n')
     
-    const mosaic: Mosaic = {
+    const command: Command = {
         messages: [{
             role: 'system',
             content: 'You are an expert in software architecture and design patterns'
@@ -20,7 +20,7 @@ async function complexReasoningExample() {
         model: 'claude-opus-4-1-20250805'
     }
     
-    const agent = new MosaicAgent(mosaic)
+    const agent = new Agent(command)
     const response = await agent.act('Compare and contrast the Strategy pattern vs the State pattern. When should I use each?')
     console.log(response)
 }

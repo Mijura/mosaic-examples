@@ -1,6 +1,6 @@
 import 'dotenv/config'
 import { z } from 'zod'
-import { MosaicAgent, Mosaic } from '@jigjoy-io/mosaic'
+import { Agent, Command } from '@jigjoy-io/mosaic'
 
 const bugReportSchema = z.object({
     title: z.string(),
@@ -11,7 +11,7 @@ const bugReportSchema = z.object({
 })
 
 async function structuredOutputExample() {
-    const request: Mosaic = {
+    const command: Command = {
         model: 'claude-sonnet-4-5-20250929',
         messages: [
             {
@@ -23,7 +23,7 @@ async function structuredOutputExample() {
         structuredOutput: bugReportSchema
     }
 
-    const agent = new MosaicAgent(request)
+    const agent = new Agent(command)
     const response = await agent.act()
     const result = bugReportSchema.parse(response)
     console.log(result)

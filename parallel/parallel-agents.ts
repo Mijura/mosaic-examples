@@ -8,14 +8,14 @@
  */
 
 import 'dotenv/config'
-import { MosaicAgent, Mosaic } from '@jigjoy-io/mosaic'
+import { Agent, Command } from '@jigjoy-io/mosaic'
 
 async function parallelAgentsExample() {
     console.log('\n=== Parallel Agent Execution Example ===\n')
     console.log('Running OpenAI and Anthropic agents in parallel...\n')
 
     // Create OpenAI agent configuration
-    const openaiRequest: Mosaic = {
+    const openaiRequest: Command = {
         messages: [{
             role: 'system',
             content: 'You are a helpful AI assistant specialized in technology and programming'
@@ -24,7 +24,7 @@ async function parallelAgentsExample() {
     }
 
     // Create Anthropic agent configuration
-    const anthropicRequest: Mosaic = {
+    const anthropicRequest: Command = {
         messages: [{
             role: 'system',
             content: 'You are a helpful AI assistant specialized in technology and programming'
@@ -32,8 +32,8 @@ async function parallelAgentsExample() {
         model: 'claude-sonnet-4-5-20250929'
     }
 
-    const openaiAgent = new MosaicAgent(openaiRequest)
-    const anthropicAgent = new MosaicAgent(anthropicRequest)
+    const openaiAgent = new Agent(openaiRequest)
+    const anthropicAgent = new Agent(anthropicRequest)
 
     const task = 'What are the key differences between TypeScript and JavaScript? Provide a concise answer.'
 

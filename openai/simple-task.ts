@@ -1,7 +1,7 @@
 import 'dotenv/config'
-import { Mosaic, MosaicAgent } from '@jigjoy-io/mosaic'
+import { Command, Agent } from '@jigjoy-io/mosaic'
 
-const mosaic: Mosaic = {
+const command: Command = {
     messages: [{
         role: 'system', 
         content: 'You are the weather assistent'
@@ -10,6 +10,6 @@ const mosaic: Mosaic = {
     model: 'gpt-5'
 }
 
-const agent = new MosaicAgent(mosaic)
+const agent = new Agent(command)
 const response = await agent.act()
 console.log(response)
