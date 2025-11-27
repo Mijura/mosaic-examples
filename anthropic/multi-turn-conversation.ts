@@ -18,7 +18,7 @@ async function conversationExample() {
             { role: 'user', content: 'What are generics in TypeScript?' },
             { role: 'assistant', content: 'Generics in TypeScript allow you to write reusable, type-safe code...' }
         ],
-        model: 'claude-haiku-4-5-20251001'
+        model: 'claude-haiku-4.5'
     }
     
     const agent = new Agent(command)

@@ -6,12 +6,12 @@
  */
 
 import 'dotenv/config'
-import { Mosaic, MosaicAgent } from '@jigjoy-io/mosaic'
+import { Command, Agent } from '@jigjoy-io/mosaic'
 
 async function visionExample(){
     console.log('\n=== Vision Example ===\n')
 
-    const request: Mosaic = {
+    const request: Command = {
         messages: [{
             role: 'user',
             content: [
@@ -21,10 +21,10 @@ async function visionExample(){
                 }
             ]
         }],
-        model: 'claude-opus-4-1-20250805'
+        model: 'claude-opus-4.5'
     }
 
-    const agent = new MosaicAgent(request)
+    const agent = new Agent(request)
     const response = agent.act('What is in this image?')
 
     console.log(response)

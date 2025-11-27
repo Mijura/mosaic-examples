@@ -8,16 +8,16 @@
 import 'dotenv/config'
 import { Command, Agent } from '@jigjoy-io/mosaic'
 
-// Using Claude Opus 4.1 for complex reasoning
+// Using Claude Opus 4.5 for complex reasoning
 async function complexReasoningExample() {
-    console.log('\n=== Complex Reasoning with Claude Opus 4.1 ===\n')
+    console.log('\n=== Complex Reasoning with Claude Opus 4.5 ===\n')
     
     const command: Command = {
         messages: [{
             role: 'system',
             content: 'You are an expert in software architecture and design patterns'
         }],
-        model: 'claude-opus-4-1-20250805'
+        model: 'claude-opus-4.5'
     }
     
     const agent = new Agent(command)

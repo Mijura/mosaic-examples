@@ -17,7 +17,7 @@ async function simpleExample() {
             role: 'system',
             content: 'You are a helpful AI assistant specialized in explaining complex topics simply'
         }],
-        model: 'claude-sonnet-4-5-20250929'
+        model: 'claude-sonnet-4.5'
     }
 
     const agent = new Agent(command)

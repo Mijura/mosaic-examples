@@ -12,7 +12,7 @@ const bugReportSchema = z.object({
 
 async function structuredOutputExample() {
     const command: Command = {
-        model: 'claude-sonnet-4-5-20250929',
+        model: 'claude-sonnet-4.5',
         messages: [
             {
                 role: 'system',

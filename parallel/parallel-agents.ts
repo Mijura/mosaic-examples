@@ -29,7 +29,7 @@ async function parallelAgentsExample() {
             role: 'system',
             content: 'You are a helpful AI assistant specialized in technology and programming'
         }],
-        model: 'claude-sonnet-4-5-20250929'
+        model: 'claude-sonnet-4.5'
     }
 
     const openaiAgent = new Agent(openaiRequest)
