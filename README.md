@@ -36,6 +36,7 @@ npx tsx anthropic/vision.ts
 npx tsx anthropic/multi-turn-conversation.ts
 npx tsx anthropic/complex-reasoning.ts
 npx tsx openai/simple-prompt.ts
+npx tsx tools/write-file.ts
 npx tsx parallel/parallel-agents.ts
 ```
 
@@ -43,3 +44,4 @@ npx tsx parallel/parallel-agents.ts
 - `anthropic/` — Anthropic-specific examples
 - `openai/` — OpenAI-specific examples
 - `parallel/` — Parallel execution examples using Promise.all()
+- `tools/` — Tool-calling examples
